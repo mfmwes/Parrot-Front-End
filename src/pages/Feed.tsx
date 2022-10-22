@@ -1,9 +1,9 @@
-
+import { Header } from "../components/Header"
 
 export const Feed = () => {
   return (
-    <div>
-        Oi, mundo.
-    </div>
+    <>
+    <Header/>
+    </>
   )
 }
