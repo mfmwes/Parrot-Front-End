@@ -6,7 +6,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Questrial', sans-serif;
-  }
-`;
+  };
+  
+  `
  
 export default GlobalStyle;
+
