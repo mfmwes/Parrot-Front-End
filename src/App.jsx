@@ -15,17 +15,20 @@ function App() {
     "linear-gradient(to right, #56C1E1 0%, #35A9CE 50%)";
   return (
     <MainContainer>
-      <WelcomeText>LOGIN</WelcomeText>
-      <logo></logo>
+      <WelcomeText> CADASTRO </WelcomeText>
+
       <InputContainer>
+        <Input type="text" placeholder="Nome" />
         <Input type="text" placeholder="Email" />
-        <Input type="password" placeholder="Password" />
+        <Input type="password" placeholder="Senha" />
+        <Input type="password" placeholder="Confirmar Senha" />
+        <Input type="text" placeholder="Unidade/apartamento" />
+        <Input type="text" placeholder="link da foto" />
       </InputContainer>
       <ButtonContainer>
         <Button content="ENTRAR" />
       </ButtonContainer>
-      <LoginWith>ou cadastre-se</LoginWith>
-      <HorizontalRule />
+      
       <IconsContainer>
         <Icon color={FacebookBackground}>
           <FaFacebookF />
@@ -37,7 +40,6 @@ function App() {
           <FaTwitter />
         </Icon>
       </IconsContainer>
-      <ForgotPassword>Esqueceu sua senha ?</ForgotPassword>
     </MainContainer>
   );
 }
@@ -93,7 +95,7 @@ const MainContainer = styled.div`
 `;
 
 const WelcomeText = styled.h2`
-  margin: 3rem 0 2rem 0;
+  margin: 5rem 0 7rem ;
 `;
 
 /* const logo = styled.logo`
@@ -111,37 +113,19 @@ const InputContainer = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  margin: 1rem 0 2rem 0;
+  margin: 7rem 0 7rem 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const LoginWith = styled.h5`
-  cursor: pointer;
-`;
-
-const HorizontalRule = styled.hr`
-  width: 90%;
-  height: 0.3rem;
-  border-radius: 0.8rem;
-  border: none;
-  background: linear-gradient(to right, #001307 0%, #098060 79%);
-  background-color: #ffffff;
-  margin: 1.5rem 0 1rem 0;
-  backdrop-filter: blur(25px);
-`;
 
 const IconsContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin: 2rem 0 3rem 0;
+  margin: -5rem 0 3rem 0;
   width: 80%;
-`;
-
-const ForgotPassword = styled.h4`
-  cursor: pointer;
 `;
 
 export default App;

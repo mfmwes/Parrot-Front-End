@@ -1,6 +1,6 @@
 {
-  "name": "login-form",
-  "homepage": "https://www.nodesandedges.com/react/loginForm/",
+  "name": "cadastro-form",
+  "homepage": "https://www.nodesandedges.com/react/CadastroForm/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
