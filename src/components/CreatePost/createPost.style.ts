@@ -28,7 +28,6 @@ export const StyledInput = styled.input `
 `
 
 export const CreatePostContainer = styled.div `
-    border: '1px solid #C5C5C5'; 
     display: flex;
     margin: auto;
     width: fit-content;

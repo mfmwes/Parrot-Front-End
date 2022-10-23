@@ -1,5 +1,5 @@
 import { Header } from "../components/Header"
-import { Profile } from "../components/Profile/Profile"
+import { Profile } from "../components/Profile"
 import { StyledContainer } from "../styles/styled-components"
 const usuario = 'usuario'
 
@@ -8,7 +8,7 @@ const usuario = 'usuario'
     <>
     <Header user={`Olá, ${usuario} |`}/>
     <StyledContainer>
-     
+     <Profile/>
     </StyledContainer>
     </>
   )

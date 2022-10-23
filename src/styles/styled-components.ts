@@ -11,7 +11,7 @@ export const StyledHeader = styled.header `
 
 export const StyledContainer = styled.div `
     max-width: 1024px;
-    height: 100%;
+    height: 100vh;
     margin: 0 auto;
     text-align: center;
     border: 1px solid #C5C5C5;
@@ -27,3 +27,6 @@ justify-content: center;
 }
 `
 
+export const ListContainer = styled.div `
+    height: fit-content; 
+`

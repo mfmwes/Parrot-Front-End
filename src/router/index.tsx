@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     element: <Feed/>
    },
    {
-    path:'/user/profile',
+    path:'/profile',
     element:<UserProfile/>
    }
 ]);
