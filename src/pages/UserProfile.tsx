@@ -7,9 +7,7 @@ const usuario = 'usuario'
   return (
     <>
     <Header user={`Olá, ${usuario} |`}/>
-    <StyledContainer>
-     <Profile/>
-    </StyledContainer>
+     <Profile/>  
     </>
   )
 }

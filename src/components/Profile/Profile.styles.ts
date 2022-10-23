@@ -20,3 +20,15 @@ export const StyledButton = styled.button `
     margin-right: 22px;
     margin-bottom: 25px;
  }`
+
+export const Paragraph = styled.p `
+    &.username {
+        color:#76BB4C;
+        font-size:24px;
+    }
+
+    &.apartment,.email {
+        color: #000000;
+        font-size:16px;
+    }
+`
