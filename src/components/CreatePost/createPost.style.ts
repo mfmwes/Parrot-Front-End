@@ -10,7 +10,7 @@ export const StyledButton = styled.button `
     color: #FFFFFF; 
     display:block;
     margin-left: auto;
-    margin-right: 200px;
+    margin-right: 22px;
     margin-bottom: 25px;
  }`
 
@@ -25,4 +25,11 @@ export const StyledInput = styled.input `
     display: inline-block; 
 
 }
+`
+
+export const CreatePostContainer = styled.div `
+    border: '1px solid #C5C5C5'; 
+    display: flex;
+    margin: auto;
+    width: fit-content;
 `

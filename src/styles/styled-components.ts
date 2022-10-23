@@ -11,10 +11,10 @@ export const StyledHeader = styled.header `
 
 export const StyledContainer = styled.div `
     max-width: 1024px;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #C5C5C5;
     border-top: 0;
     
    

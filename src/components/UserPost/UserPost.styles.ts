@@ -8,6 +8,8 @@ export const PostContainer = styled.div `
     display: flex;
     text-align: left;
     align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
     `
 export const UserImage = styled.img `
     height: 70px;
