@@ -11,12 +11,12 @@ import { ListContainer, StyledContainer } from "../styles/styled-components"
     <Header user={`Olá, ${usuario} |`}/>
       <CreatePost/>
       <ListContainer> 
+      {/* <UserPost/>
       <UserPost/>
       <UserPost/>
       <UserPost/>
-      <UserPost/>
-      <UserPost/>
-      {/* <NoCotent/> */}
+      <UserPost/> */}
+      <NoCotent/>
     </ListContainer>
     </StyledContainer>  
   )
