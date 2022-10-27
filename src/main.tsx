@@ -7,14 +7,17 @@ import GlobalStyle from './styles/globalStyles';
 //routes
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
-import { StyledContainer } from './styles/styled-components';
+
+//redux
+import {Provider} from 'react-redux'
+import store from './redux/store'
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <GlobalStyle/>
-    <StyledContainer>
-    <RouterProvider router={router}/>
-    </StyledContainer>
+    <Provider store={store}>
+    <GlobalStyle/> 
+    <RouterProvider router={router}/>   
+    </Provider>
   </React.StrictMode>
 )

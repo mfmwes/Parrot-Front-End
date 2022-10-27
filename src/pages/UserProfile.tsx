@@ -1,14 +1,17 @@
 import { Header } from "../components/Header"
 import { Profile } from "../components/Profile"
 import { StyledContainer } from "../styles/styled-components"
-const usuario = 'usuario'
+import { useSelector } from "react-redux"
+import { RootStore } from "../redux/store"
+
+
 
  const UserProfile = () => {
   return (
-    <>
-    <Header user={`Olá, ${usuario} |`}/>
+    <StyledContainer>
+    <Header user={`Olá, ${'user'} |`}/>
      <Profile/>  
-    </>
+    </StyledContainer>
   )
 }
 

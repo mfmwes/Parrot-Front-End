@@ -7,18 +7,18 @@ import { ListContainer, StyledContainer } from "../styles/styled-components"
  const Feed = () => {
   const usuario = 'usuario'
   return (
-    <>
+    <StyledContainer>
     <Header user={`Olá, ${usuario} |`}/>
       <CreatePost/>
       <ListContainer> 
-      {/* <UserPost/>
       <UserPost/>
       <UserPost/>
       <UserPost/>
-      <UserPost/> */}
-      <NoCotent/>
+      <UserPost/>
+      <UserPost/>
+      {/* <NoCotent/> */}
     </ListContainer>
-    </>  
+    </StyledContainer>  
   )
 }
 
