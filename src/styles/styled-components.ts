@@ -5,6 +5,7 @@ export const StyledHeader = styled.header `
  background: #FFFFFF;
  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
  display: flex;
+ flex-direction: column;
  justify-content: space-between;
 
 `
@@ -16,6 +17,10 @@ export const StyledContainer = styled.div `
     text-align: center;
     border: 3px solid #C5C5C5;
     border-top: 0;
+
+    @media only screen and (min-width: 360px) {
+     
+    }
 `
 
 export const StyledBox = styled.div `
@@ -23,10 +28,18 @@ export const StyledBox = styled.div `
 margin-top: 15px;
 justify-content: center;
 }
+@media only screen and (min-width: 360px) {
+  display: flex;
+  flex-direction: column;
+}
 `
 
 export const ListContainer = styled.div `
     height: 100%;
+
+    @media only screen and (min-width: 360px) {
+      
+    }
 `
 
 // Login Components Styles
@@ -66,6 +79,10 @@ letter-spacing: 0.4rem;
   h4 {
     font-size: small;
   }
+  img {
+    position: relative;
+    top: 7%
+  }
 }
 @media only screen and (min-width: 411px) {
   width: 80vw;
@@ -102,6 +119,12 @@ justify-content: space-around;
 align-items: center;
 height: 15%;
 width: 100%;
+
+@media only screen and (min-width: 360px) {
+  position: relative;
+  top:3%
+}
+
 `;
 
 export const ButtonContainer = styled.div`
@@ -132,9 +155,21 @@ display: flex;
 justify-content: space-evenly;
 margin: 2rem 0 3rem 0;
 width: 80%;
+
+@media only screen and (min-width: 360px) {
+  position: relative;
+  bottom: 5%;
+}
+
 `;
 
 export const ForgotPassword = styled.h4`
 cursor: pointer;
+
+@media only screen and (min-width: 360px) {
+  position: relative;
+  bottom: 10%;
+}
+
 `;
 
