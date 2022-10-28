@@ -3,8 +3,20 @@ import { UserPhoto } from '../UserPhoto'
 import { UserPost } from '../UserPost'
 import { Paragraph, StyledButton } from './Profile.styles'
 import { ProfileContainer } from './Profile.styles'
+import { useSelector } from 'react-redux'
+import { useJwt } from 'react-jwt'
+import { RootStore } from '../../redux/store'
 
 export const Profile = () => {
+  const token = useSelector((store:RootStore) => String(store.userReducer.token))
+  const decode = () => {
+   const { decodedToken } = useJwt(token)
+   return decodedToken
+  }
+
+const data:any = decode()
+
+
   return (
     <>
   <ProfileContainer>

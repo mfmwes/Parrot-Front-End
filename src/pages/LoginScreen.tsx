@@ -11,9 +11,11 @@ import {
 } from "../styles/styled-components";
 import Logo from '../img/parrot-logo-2.png'
 import { loginUser } from '../redux/userSlice';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios'
 
 const LoginScreen = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
@@ -34,8 +36,10 @@ const LoginScreen = () => {
       console.log(response.data)
       dispatch(loginUser({token: response.data.token, email }));
       alert('login successful')
+      navigate('/')
     } catch (err) {
-      console.log('deu ruim', err)
+      alert('email ou senha não correspondem aos registros')
+      console.log(err)
     }
   }
 
@@ -50,7 +54,9 @@ const LoginScreen = () => {
       <ButtonContainer>
         <Button onClick={handleLogin}> ENTRAR </Button>
       </ButtonContainer>
-      <LoginWith>ou cadastre-se</LoginWith>
+      <Link to={'/register'}>
+        <LoginWith>ou cadastre-se</LoginWith>
+      </Link>
       <HorizontalRule />
       <IconsContainer>
         <Icon color={FacebookBackground}>

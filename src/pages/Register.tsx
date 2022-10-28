@@ -6,8 +6,10 @@ import Input from "../components/InputButtonsComponents/Input"
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import Logo from '../img/parrot-logo-2.png'
 import api from '../services/config'
+import {useNavigate} from 'react-router-dom'
 
 function Register() {
+  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [apartment, setApartment] = useState('')
@@ -25,7 +27,11 @@ const newUser = {
   
 const registerUser = () => {
    api.post('/register', newUser)
-  .then(response => {console.log(response.data)})
+  .then(response => {
+    console.log(response.data)
+    alert('usuario cadastrado com sucesso'),
+    navigate('/login')
+  })
   .catch(error => console.log(error))
   }
 
@@ -35,11 +41,11 @@ const registerUser = () => {
       <img src={Logo} alt="" />
       <WelcomeText> CADASTRO </WelcomeText>
       <InputContainer>
-        <Input value={name} onChange={(e:any) =>  setName(e.target.value)} type="text" placeholder="Nome" />
-        <Input value={email} onChange={(e:any) => setEmail(e.target.value)} type="text" placeholder="Email" />
-        <Input value={password} onChange={(e:any) => setPassword(e.target.value)} type="password" placeholder="Senha" />
-        <Input value={confirmPassword} onChange={(e:any) => setConfirmPassword(e.target.value)}type="password" placeholder="Confirmar Senha" />
-        <Input value={apartment} onChange={(e:any) => setApartment(e.target.value)}type="text" placeholder="Unidade/apartamento"/>
+        <Input value={name} onChange={(e:any) =>  setName(e.target.value)} type="text" placeholder="Nome" required/>
+        <Input value={email} onChange={(e:any) => setEmail(e.target.value)} type="text" placeholder="Email" required />
+        <Input value={password} onChange={(e:any) => setPassword(e.target.value)} type="password" placeholder="Senha" required/>
+        <Input value={confirmPassword} onChange={(e:any) => setConfirmPassword(e.target.value)}type="password" placeholder="Confirmar Senha" required/>
+        <Input value={apartment} onChange={(e:any) => setApartment(e.target.value)}type="text" placeholder="Unidade/apartamento" required/>
         <Input value={photo} onChange={(e:any) => setPhoto(e.target.value)}type="text" placeholder="link da foto" />
       </InputContainer>
       <ButtonContainer>
