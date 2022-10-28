@@ -21,7 +21,6 @@ const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
 
-
   const handleLogin = async () => {
     try {
       const data = JSON.stringify({
@@ -33,11 +32,10 @@ const LoginScreen = () => {
           'Content-Type': 'application/json'
         }
       });
-
       console.log(response.data)
       dispatch(loginUser({token: response.data.token, email }));
       alert('login successful')
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       alert('email ou senha não correspondem aos registros')
       console.log(err)
