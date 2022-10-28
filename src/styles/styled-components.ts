@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const StyledHeader = styled.header `
  background: #FFFFFF;
  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
@@ -32,15 +33,16 @@ export const ListContainer = styled.div `
 
 
 export const MainContainer = styled.div`
+position: relative;
+top: 8%;
 margin: auto;
-margin-top: 5%;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
 height: 100vh;
 width: 30vw;
-background: rgba(194, 189, 189, 0.15);
+background: #FFFFFF;
 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 backdrop-filter: blur(8.5px);
 -webkit-backdrop-filter: blur(8.5px);
@@ -85,7 +87,7 @@ letter-spacing: 0.4rem;
 `;
 
 export const WelcomeText = styled.h2`
-margin: 3rem 0 2rem 0;
+margin: 2rem 0 2rem 0;
 `;
 
 /* const logo = styled.logo`
@@ -103,7 +105,7 @@ width: 100%;
 `;
 
 export const ButtonContainer = styled.div`
-margin: 1rem 0 2rem 0;
+margin: 2rem 0 2rem 0;
 width: 100%;
 display: flex;
 align-items: center;

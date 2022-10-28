@@ -7,7 +7,7 @@ export default function Button({...rest}) {
 
 const StyledButton = styled.button`
   font-weight: 400;
-  background: #76BB4C;
+  background: #673AB7;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   width: 65%;
