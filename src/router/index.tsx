@@ -7,7 +7,7 @@ import Register from "../pages/Register";
 
 const router = createBrowserRouter([
    {
-    path:'/',
+    path:'/dashboard',
     element: <Feed/>
    },
    {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element:<UserProfile/>
    },
    {
-    path:'/login',
+    path:'/',
     element: <LoginScreen/>
    },
    {

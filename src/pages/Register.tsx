@@ -4,9 +4,10 @@ import Button from "../components/InputButtonsComponents/Button";
 import Icon from "../components/InputButtonsComponents/Icon";
 import Input from "../components/InputButtonsComponents/Input"
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
-import Logo from '../img/parrot-logo-2.png'
+import Logo from '../img/parrot-logo-preto.png'
 import api from '../services/config'
 import {useNavigate} from 'react-router-dom'
+import Background from '../img/backgroundLogin.jpeg'
 
 function Register() {
   const navigate = useNavigate()
@@ -37,33 +38,34 @@ const registerUser = () => {
 
 
   return (
-    <MainContainer>
-      <img src={Logo} alt="" />
-      <WelcomeText> CADASTRO </WelcomeText>
-      <InputContainer>
-        <Input value={name} onChange={(e:any) =>  setName(e.target.value)} type="text" placeholder="Nome" required/>
-        <Input value={email} onChange={(e:any) => setEmail(e.target.value)} type="text" placeholder="Email" required />
-        <Input value={password} onChange={(e:any) => setPassword(e.target.value)} type="password" placeholder="Senha" required/>
-        <Input value={confirmPassword} onChange={(e:any) => setConfirmPassword(e.target.value)}type="password" placeholder="Confirmar Senha" required/>
-        <Input value={apartment} onChange={(e:any) => setApartment(e.target.value)}type="text" placeholder="Unidade/apartamento" required/>
-        <Input value={photo} onChange={(e:any) => setPhoto(e.target.value)}type="text" placeholder="link da foto" />
-      </InputContainer>
-      <ButtonContainer>
-        <Button onClick={registerUser}> CADASTRAR </Button>
-      </ButtonContainer>
-      
-      <IconsContainer>
-        <Icon color={FacebookBackground}>
-          <FaFacebookF />
-        </Icon>
-        <Icon color={InstagramBackground}>
-          <FaInstagram />
-        </Icon>
-        <Icon color={TwitterBackground}>
-          <FaTwitter />
-        </Icon>
-      </IconsContainer>
-    </MainContainer>
+    <div style={{background:`url(${Background})`, height:'100vh', backgroundSize:'cover'}}>
+      <MainContainer>
+        <img src={Logo} alt="" style={{width:'265px', height:'90px'}} />
+        <WelcomeText> CADASTRO </WelcomeText>
+        <InputContainer>
+          <Input value={name} onChange={(e:any) =>  setName(e.target.value)} type="text" placeholder="Nome" required/>
+          <Input value={email} onChange={(e:any) => setEmail(e.target.value)} type="text" placeholder="Email" required />
+          <Input value={password} onChange={(e:any) => setPassword(e.target.value)} type="password" placeholder="Senha" required/>
+          <Input value={confirmPassword} onChange={(e:any) => setConfirmPassword(e.target.value)}type="password" placeholder="Confirmar Senha" required/>
+          <Input value={apartment} onChange={(e:any) => setApartment(e.target.value)}type="text" placeholder="Unidade/apartamento" required/>
+          <Input value={photo} onChange={(e:any) => setPhoto(e.target.value)}type="text" placeholder="link da foto" />
+        </InputContainer>
+        <ButtonContainer>
+          <Button onClick={registerUser}> CADASTRAR </Button>
+        </ButtonContainer> 
+        <IconsContainer>
+          <Icon color={FacebookBackground}>
+            <FaFacebookF />
+          </Icon>
+          <Icon color={InstagramBackground}>
+            <FaInstagram />
+          </Icon>
+          <Icon color={TwitterBackground}>
+            <FaTwitter />
+          </Icon>
+        </IconsContainer>
+      </MainContainer>
+    </div>
   );
 }
 
@@ -76,17 +78,18 @@ const TwitterBackground =
 
 
 const MainContainer = styled.div`
+  position: relative;
+  top:8%;
   margin: auto;
-  margin-top: 5%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  height: 100vh;
   width: 30vw;
-  background: rgba(194, 189, 189, 0.15);
+  background: #FFFFFF;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8.5px);
-  -webkit-backdrop-filter: blur(8.5px);
+  /* -webkit-backdrop-filter: blur(8.5px); */
   border-radius: 10px;
   color: #000000;
   text-transform: uppercase;
@@ -128,7 +131,7 @@ const MainContainer = styled.div`
 `;
 
 const WelcomeText = styled.h2`
-  margin: 4rem 0 9rem ;
+  margin: 2rem 0 9rem ;
   padding-bottom: 25px;
 `;
 
