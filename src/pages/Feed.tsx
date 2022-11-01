@@ -11,8 +11,8 @@ import { useNavigate } from "react-router-dom"
 
 
 const Feed = () => {
-  const [allPosts, setAllPosts] = useState([])
   const navigate = useNavigate()
+  const [allPosts, setAllPosts] = useState([])
   const loginState = useSelector((store:RootStore) => store.userReducer.isLogged)
   const info = useSelector((store:RootStore) => (store.userReducer.email))
   const token = useSelector((store: RootStore) => String(store.userReducer.token))
