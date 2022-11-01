@@ -6,9 +6,8 @@ export const StyledHeader = styled.header `
  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
  display: flex;
  justify-content: space-between;
- @media only screen and (max-width: 360px) {  
-   flex-direction: column;
-   justify-content: space-between;
+ @media only screen and (max-width: 400px) { 
+    flex-direction: column;
   }
 
 `
@@ -30,9 +29,9 @@ export const StyledBox = styled.div `
 &.header {margin-right: 5%;
 margin-top: 15px;
 justify-content: center;
-display: flex;
+/* display: flex; */
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (min-width: 360px) {
   display: flex;
   flex-direction: column;
 }

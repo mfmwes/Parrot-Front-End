@@ -30,7 +30,7 @@ export const Header = (props: HeaderProps) => {
         <Link to={'/profile'}>
           <span style={{ color: '#76BB4C', fontSize: '24px', fontWeight: '600' }}>{props.user}</span>
         </Link>
-        <span onClick={handleLogout} style={{ color: '#6033AA', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>sair</span>
+        <span onClick={handleLogout} style={{ color: '#6033AA', fontSize: '18px', fontWeight: '600', cursor: 'pointer', marginTop:'3px' }}>sair</span>
       </StyledBox>
     </StyledHeader>
   )
