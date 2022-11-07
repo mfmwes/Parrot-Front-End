@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
+
 export const StyledHeader = styled.header `
  background: #FFFFFF;
  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
  display: flex;
  justify-content: space-between;
+ @media only screen and (max-width: 400px) { 
+    flex-direction: column;
+  }
 
 `
 
@@ -15,32 +19,46 @@ export const StyledContainer = styled.div `
     text-align: center;
     border: 3px solid #C5C5C5;
     border-top: 0;
+
+    @media only screen and (min-width: 360px) {
+     
+    }
 `
 
 export const StyledBox = styled.div `
 &.header {margin-right: 5%;
 margin-top: 15px;
 justify-content: center;
+/* display: flex; */
+}
+@media only screen and (min-width: 360px) {
+  display: flex;
+  flex-direction: column;
 }
 `
 
 export const ListContainer = styled.div `
     height: 100%;
+
+    @media only screen and (min-width: 360px) {
+      
+    }
 `
 
 // Login Components Styles
 
 
 export const MainContainer = styled.div`
+position: relative;
+top: 8%;
 margin: auto;
-margin-top: 5%;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
 height: 100vh;
 width: 30vw;
-background: rgba(194, 189, 189, 0.15);
+background: #FFFFFF;
 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 backdrop-filter: blur(8.5px);
 -webkit-backdrop-filter: blur(8.5px);
@@ -64,6 +82,10 @@ letter-spacing: 0.4rem;
   h4 {
     font-size: small;
   }
+  img {
+    position: relative;
+    top: 7%
+  }
 }
 @media only screen and (min-width: 411px) {
   width: 80vw;
@@ -85,7 +107,7 @@ letter-spacing: 0.4rem;
 `;
 
 export const WelcomeText = styled.h2`
-margin: 3rem 0 2rem 0;
+margin: 2rem 0 2rem 0;
 `;
 
 /* const logo = styled.logo`
@@ -100,10 +122,16 @@ justify-content: space-around;
 align-items: center;
 height: 15%;
 width: 100%;
+
+@media only screen and (min-width: 360px) {
+  position: relative;
+  top:3%
+}
+
 `;
 
 export const ButtonContainer = styled.div`
-margin: 1rem 0 2rem 0;
+margin: 2rem 0 2rem 0;
 width: 100%;
 display: flex;
 align-items: center;
@@ -130,9 +158,21 @@ display: flex;
 justify-content: space-evenly;
 margin: 2rem 0 3rem 0;
 width: 80%;
+
+@media only screen and (min-width: 360px) {
+  position: relative;
+  bottom: 5%;
+}
+
 `;
 
 export const ForgotPassword = styled.h4`
 cursor: pointer;
+
+@media only screen and (min-width: 360px) {
+  position: relative;
+  bottom: 10%;
+}
+
 `;
 

@@ -14,7 +14,7 @@ export const userReduce = createSlice({
     } as UserProps,
     reducers: {
         loginUser(state, action) {
-            Object.assign(state, {
+          Object.assign(state, {
                 token: action.payload.token,
                 email:action.payload.email,
                 isLogged: true
@@ -32,3 +32,4 @@ export const userReduce = createSlice({
 
 export const {loginUser, logout} = userReduce.actions
 export default userReduce.reducer
+

@@ -9,17 +9,17 @@ import {
   WelcomeText, ButtonContainer, LoginWith, HorizontalRule, IconsContainer,
   ForgotPassword
 } from "../styles/styled-components";
-import Logo from '../img/parrot-logo-2.png'
+import Logo from '../img/parrot-logo-preto.png'
 import { loginUser } from '../redux/userSlice';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios'
+import Background from '../img/backgroundLogin.jpeg'
 
 const LoginScreen = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
-
 
   const handleLogin = async () => {
     try {
@@ -32,11 +32,11 @@ const LoginScreen = () => {
           'Content-Type': 'application/json'
         }
       });
-
-      console.log(response.data)
       dispatch(loginUser({token: response.data.token, email }));
       alert('login successful')
-      navigate('/')
+      navigate('/dashboard')
+      localStorage.setItem('name', response.data.user.name)
+      
     } catch (err) {
       alert('email ou senha não correspondem aos registros')
       console.log(err)
@@ -44,8 +44,9 @@ const LoginScreen = () => {
   }
 
   return (
+    <div style={{background:`url(${Background})`, height:'100vh', backgroundSize:'cover'}}>
     <MainContainer>
-      <img src={Logo} alt="" />
+      <img src={Logo} alt="" style={{width:'265px', height:'90px'}} />
       <WelcomeText>LOGIN</WelcomeText>
       <InputContainer>
         <Input value={email} onChange={(e:any) => setEmail(e.target.value)} type="text" placeholder="Email" />
@@ -71,6 +72,7 @@ const LoginScreen = () => {
       </IconsContainer>
       <ForgotPassword>Esqueceu sua senha ?</ForgotPassword>
     </MainContainer>
+    </div>
   );
 }
 const FacebookBackground =
@@ -79,5 +81,7 @@ const InstagramBackground =
   "linear-gradient(to right, #A12AC4 0%, #ED586C 40%, #F0A853 100%)";
 const TwitterBackground =
   "linear-gradient(to right, #56C1E1 0%, #35A9CE 50%)";
+
+
 
 export default LoginScreen;
