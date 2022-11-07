@@ -8,20 +8,9 @@ import { RootStore } from "../redux/store";
 
 
 const UserProfile = () => {
-  const info = useSelector((store: RootStore) => String(store.userReducer.email))
-  const token = useSelector((store: RootStore) => String(store.userReducer.token))
-  const decode = () => {
-    const { decodedToken } = useJwt(token)
-    console.log(decodedToken)
-    return decodedToken
-  }
-
-  const data:any = decode()
- 
-
   return (
     <StyledContainer>
-      <Header user={`Olá, ${info} |`} />
+      <Header user={`Olá, ${localStorage.getItem('name')} |`} />
       <Profile />
     </StyledContainer>
   )

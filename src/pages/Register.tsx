@@ -31,7 +31,7 @@ const registerUser = () => {
   .then(response => {
     console.log(response.data)
     alert('usuario cadastrado com sucesso'),
-    navigate('/login')
+    navigate('/')
   })
   .catch(error => console.log(error))
   }

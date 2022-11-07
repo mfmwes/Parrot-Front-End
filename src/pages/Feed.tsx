@@ -6,39 +6,41 @@ import { ListContainer, StyledContainer } from "../styles/styled-components"
 import { useJwt } from "react-jwt"
 import { useSelector } from "react-redux"
 import { RootStore } from "../redux/store"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 
+interface DataProps {
+  name: string
+}
 
 const Feed = () => {
   const navigate = useNavigate()
   const [allPosts, setAllPosts] = useState([])
   const loginState = useSelector((store:RootStore) => store.userReducer.isLogged)
-  const info = useSelector((store:RootStore) => (store.userReducer.email))
-  const token = useSelector((store: RootStore) => String(store.userReducer.token))
-  const decode = () => {
-   const {decodedToken} = useJwt(token)
-   return decodedToken
-  }
- const data = decode()
- console.log(data)
+  console.log(loginState)
 
+
+  useEffect(() => {
+    navigateControl();
+  }, []);
+ 
  const navigateControl = () => {
   if (loginState === false) {
     navigate('/')
+    alert('É necessario fazer login para acessar o Parrot')
   }
  }
-  navigateControl()
+ 
   
   return (
     <StyledContainer>
-      <Header user={`Olá, ${info} |`}/>
+      <Header user={`Olá, ${localStorage.getItem('name')} |`}/>
       <CreatePost />
       <ListContainer>
       {allPosts.length < 1 
       ? ( <NoCotent/> ) 
       : (allPosts.map((post) => <UserPost/>))};
-      </ListContainer>
+      </ListContainer> 
     </StyledContainer>
   )
 }

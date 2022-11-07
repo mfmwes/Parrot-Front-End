@@ -32,10 +32,11 @@ const LoginScreen = () => {
           'Content-Type': 'application/json'
         }
       });
-      console.log(response.data)
       dispatch(loginUser({token: response.data.token, email }));
       alert('login successful')
       navigate('/dashboard')
+      localStorage.setItem('name', response.data.user.name)
+      
     } catch (err) {
       alert('email ou senha não correspondem aos registros')
       console.log(err)
